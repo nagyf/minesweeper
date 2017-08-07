@@ -1,3 +1,10 @@
 <div>
-  
+  <div class="game-header">
+    <app-reset (onClick)="reset()"></app-reset>
+    <app-timer></app-timer>
+  </div>
+  <app-minefield [model]="model"
+                 (onWin)="won()"
+                 (onGameOver)="gameOver()"
+                 (onChange)="onChange()"></app-minefield>
 </div>

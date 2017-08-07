@@ -1,0 +1,12 @@
+<div class="row" *ngFor="let row of rowRange">
+  <app-field *ngFor="let column of columnRange"
+             [row]="row"
+             [column]="column"
+             [enabled]="!isGameOver()"
+             [marked]="isMarked(row, column)"
+             [revealed]="isRevealed(row, column)"
+             [triggered]="isTriggered(row, column)"
+             [bombsAround]="numberOfBombsAround(row, column)"
+             (onClicked)="reveal($event)"
+             (onMarked)="mark($event)"></app-field>
+</div>

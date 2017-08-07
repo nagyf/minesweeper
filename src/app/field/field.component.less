@@ -1,0 +1,32 @@
+:host {
+  display: inline-block;
+}
+
+.field {
+  text-align: center;
+  display: table-cell;
+  background-color: lightgray;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  vertical-align: middle;
+  cursor: pointer;
+
+  border: 1px outset white;
+
+  &.revealed {
+    cursor: default;
+    border: 1px solid gray;
+  }
+
+  &:active:not(.revealed):not(.marked) {
+    border: 1px inset lightgray;
+  }
+
+  &.marked {
+    color: red;
+  }
+;
+}

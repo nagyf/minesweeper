@@ -1,0 +1,8 @@
+<span class="field"
+      [ngClass]="{'marked': marked, 'revealed': revealed}"
+      (click)="fieldClicked($event)">
+  <span *ngIf="revealed">{{bombsAround}}</span>
+  <span *ngIf="marked"><i class="fa fa-flag"></i></span>
+  <span *ngIf="triggered"><i class="fa fa-bomb"></i></span>
+</span>
+
