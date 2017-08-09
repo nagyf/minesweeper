@@ -1,0 +1,19 @@
+<div class="settings">
+  <input type="number"
+         title="rows"
+         [(ngModel)]="rows"
+         [disabled]="!enabled"
+         (ngModelChange)="onModelChange($event)"/>
+
+  <input type="number"
+         title="columns"
+         [(ngModel)]="columns"
+         [disabled]="!enabled"
+         (ngModelChange)="onModelChange($event)"/>
+
+  <input type="number"
+         title="bombs"
+         [(ngModel)]="bombs"
+         [disabled]="!enabled"
+         (ngModelChange)="onModelChange($event)"/>
+</div>

@@ -10,15 +10,22 @@ import {Minefield} from './model/minefield';
 export class AppComponent {
   @ViewChild(TimerComponent) timer: TimerComponent;
 
-  private rows = 16;
-  private columns = 30;
-  private bombs = 60;
-  private model = new Minefield(this.rows, this.columns, this.bombs);
+  private options = {
+    rows: 16,
+    columns: 30,
+    bombs: 60
+  };
+
+  private model = this.createModel();
+
+  createModel() {
+    return new Minefield(this.options.rows, this.options.columns, this.options.bombs);
+  }
 
   reset(): void {
-    this.timer.reset();
     this.timer.stop();
-    this.model = new Minefield(this.rows, this.columns, this.bombs);
+    this.timer.reset();
+    this.model = this.createModel();
   }
 
   won(): void {
@@ -27,6 +34,11 @@ export class AppComponent {
 
   gameOver(): void {
     this.timer.stop();
+  }
+
+  onSettingsChange(options) {
+    this.options = options;
+    this.model = this.createModel();
   }
 
   onChange() {

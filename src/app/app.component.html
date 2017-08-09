@@ -1,4 +1,10 @@
 <div>
+  <app-settings [rows]="options.rows"
+                [columns]="options.columns"
+                [bombs]="options.bombs"
+                [enabled]="!timer.isStarted()"
+                (onChange)="onSettingsChange($event)"></app-settings>
+
   <div class="game-header">
     <app-reset (onClick)="reset()"></app-reset>
     <app-timer></app-timer>

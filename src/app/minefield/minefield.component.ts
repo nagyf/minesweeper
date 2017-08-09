@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import * as _ from 'lodash';
 import {Minefield} from '../model/minefield';
 import {FieldState} from '../model/fieldState';
@@ -8,7 +8,7 @@ import {FieldState} from '../model/fieldState';
   templateUrl: './minefield.component.html',
   styleUrls: ['./minefield.component.less']
 })
-export class MinefieldComponent implements OnInit {
+export class MinefieldComponent implements OnInit, OnChanges {
   @Input() model: Minefield;
 
   @Output() onWin = new EventEmitter();
@@ -19,6 +19,11 @@ export class MinefieldComponent implements OnInit {
   columnRange: number[];
 
   ngOnInit(): void {
+    this.rowRange = _.range(0, this.model.rows);
+    this.columnRange = _.range(0, this.model.columns);
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
     this.rowRange = _.range(0, this.model.rows);
     this.columnRange = _.range(0, this.model.columns);
   }
