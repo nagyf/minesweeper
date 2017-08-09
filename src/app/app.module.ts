@@ -8,6 +8,7 @@ import {FieldComponent} from './field/field.component';
 import {TimerComponent} from './timer/timer.component';
 import {ResetButtonComponent} from './resetButton/resetButton.component';
 import {SettingsComponent} from './settings/settings.component';
+import {DigitsPipe} from './pipes/digits.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {SettingsComponent} from './settings/settings.component';
     FieldComponent,
     TimerComponent,
     ResetButtonComponent,
-    SettingsComponent
+    SettingsComponent,
+    DigitsPipe
   ],
   imports: [
     BrowserModule,
