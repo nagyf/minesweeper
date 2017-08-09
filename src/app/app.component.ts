@@ -1,6 +1,6 @@
 import {Component, ViewChild} from '@angular/core';
 import {TimerComponent} from './timer/timer.component';
-import {Minefield} from "./model/minefield";
+import {Minefield} from './model/minefield';
 
 @Component({
   selector: 'app-root',
@@ -23,12 +23,10 @@ export class AppComponent {
 
   won(): void {
     this.timer.stop();
-    alert('Win!');
   }
 
   gameOver(): void {
     this.timer.stop();
-    alert('Game Over!');
   }
 
   onChange() {
