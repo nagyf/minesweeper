@@ -1,19 +1,38 @@
 <div class="settings">
-  <input type="number"
-         title="rows"
-         [(ngModel)]="rows"
-         [disabled]="!enabled"
-         (ngModelChange)="onModelChange($event)"/>
+  <h3>Settings</h3>
+  <form id="settings-form">
 
-  <input type="number"
-         title="columns"
-         [(ngModel)]="columns"
-         [disabled]="!enabled"
-         (ngModelChange)="onModelChange($event)"/>
+    <div class="form-control">
+      <label for="bombs">Number of rows</label>
+      <input id="rows"
+             name="rows"
+             type="number"
+             title="rows"
+             [(ngModel)]="rows"
+             [disabled]="!enabled"
+             (ngModelChange)="onModelChange($event)"/>
+    </div>
 
-  <input type="number"
-         title="bombs"
-         [(ngModel)]="bombs"
-         [disabled]="!enabled"
-         (ngModelChange)="onModelChange($event)"/>
+    <div class="form-control">
+      <label for="bombs">Number of columns</label>
+      <input id="columns"
+             name="columns"
+             type="number"
+             title="columns"
+             [(ngModel)]="columns"
+             [disabled]="!enabled"
+             (ngModelChange)="onModelChange($event)"/>
+    </div>
+
+    <div class="form-control">
+      <label for="bombs">Number of bombs</label>
+      <input id="bombs"
+             name="bombs"
+             type="number"
+             title="bombs"
+             [(ngModel)]="bombs"
+             [disabled]="!enabled"
+             (ngModelChange)="onModelChange($event)"/>
+    </div>
+  </form>
 </div>
